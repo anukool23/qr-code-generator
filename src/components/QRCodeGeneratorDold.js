@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid, Flex } from '@chakra-ui/react';
 import { generateQRCode} from '../qrCodeGenerator';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 import products from './productsDairy'; 
 
 const QRCodeGeneratorDold = () => {
@@ -9,7 +9,7 @@ const QRCodeGeneratorDold = () => {
   const [selectedSku, setSelectedSku] = useState('');
   const [weight, setWeight] = useState('');
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
-  const [expDate, setExpDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
+  const [expDate, setExpDate] = useState(format(addDays(new Date(), 2), 'yyyy-MM-dd'));
   const [quantity, setQuantity] = useState(1);
   const [qrCodes, setQrCodes] = useState([]);
   const [manualSku, setManualSku] = useState('');

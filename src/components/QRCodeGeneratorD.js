@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid, Flex } from '@chakra-ui/react';
 import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns'; 
 import products from './productsDairy'; 
 import { convertor } from '../utils';
 
@@ -10,7 +10,7 @@ const QRCodeGeneratorD = () => {
   const [selectedSku, setSelectedSku] = useState('');
   const [weight, setWeight] = useState('');
   const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
-  const [expDate, setExpDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
+  const [expDate, setExpDate] = useState(format(addDays(new Date(), 2), 'yyyy-MM-dd')); 
   const [quantity, setQuantity] = useState(1);
   const [qrCodes, setQrCodes] = useState([]);
   const [manualSku, setManualSku] = useState('');
@@ -44,7 +44,6 @@ const QRCodeGeneratorD = () => {
       return;
     }
 
-    // Corrected the concatenation and conversion logic
     const formattedMfgDate = format(new Date(date), 'MMddyy');
     const formattedExpDate = format(new Date(expDate), 'MMddyy');
     const formattedDate = convertor(`${formattedMfgDate}${formattedExpDate}`);
@@ -70,7 +69,6 @@ const QRCodeGeneratorD = () => {
 
   return (
     <Grid templateColumns="1fr 2fr" gap={8} height="100vh" overflow="hidden">
-      {/* Left side: Form */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
         <FormControl id="product" isRequired>
           <FormLabel>Product</FormLabel>
@@ -150,7 +148,6 @@ const QRCodeGeneratorD = () => {
         </Button>
       </VStack>
 
-      {/* Right side: Display QR Codes */}
       <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" p={4}>
         {qrCodes.map((code, index) => (
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
