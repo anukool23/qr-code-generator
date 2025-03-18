@@ -1,6 +1,6 @@
 import { Flex, Box, Link, Image } from "@chakra-ui/react";
 import { NavLink as RouterLink } from "react-router-dom";
-import qrLogo from "../logo192.png"; // Replace with the actual path to your QR logo
+import qrLogo from "../assets/homeLogo.png"; // Replace with the actual path to your QR logo
 
 function NavBar() {
   const activeLinkStyle = {
