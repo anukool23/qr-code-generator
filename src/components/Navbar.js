@@ -46,7 +46,7 @@ function NavBar() {
               _hover={{ textDecoration: "none", color: "teal.300" }}
               width="100%"
             >
-              Dairy QR Code Generator
+              Dairy QR Code
             </Link>
           </Box>
         </Flex>

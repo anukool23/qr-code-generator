@@ -10,10 +10,10 @@ function App() {
     <ChakraProvider>
     <Router>
     <Container centerContent>
+      <Navbar />
       <Heading as="h1" size="xl" my={5}>
         QR Code Generator
       </Heading>
-      <Navbar />
       <Routes>
           <Route path="/fnvqr" element={<QRCodeGenerator />} />
           <Route path="/dairyqr" element={<QRCodeGeneratorD />} />
