@@ -481,7 +481,7 @@ const products = [
 	},
 	{
 		"name" : "French Baguette",
-		"sku" : "SKU0001",
+		"sku" : "sku0001",
 		"weight" : 200.00
 	},
 	{
@@ -1482,121 +1482,121 @@ const products = [
 		},
 
 	{
-		"NAME" : "Brown Bread - 400 GM",
-		"SKU" : "BB",
-		"WEIGHT" : 400.00
+		"name" : "Brown Bread - 400 GM",
+		"sku" : "BB",
+		"weight" : 400.00
 	},
 	{
-		"NAME" : "White Bread - 400 GM",
-		"SKU" : "WB",
-		"WEIGHT" : 400.00
+		"name" : "White Bread - 400 GM",
+		"sku" : "WB",
+		"weight" : 400.00
 	},
 	{
-		"NAME" : "MultiGrain Bread - 400GM",
-		"SKU" : "MGB",
-		"WEIGHT" : 400.00
+		"name" : "MultiGrain Bread - 400GM",
+		"sku" : "MGB",
+		"weight" : 400.00
 	},
 	{
-		"NAME" : "Homestyle Whole Wheat Bread - 400GM",
-		"SKU" : "HWWB",
-		"WEIGHT" : 400.00
+		"name" : "Homestyle Whole Wheat Bread - 400GM",
+		"sku" : "HWWB",
+		"weight" : 400.00
 	},
 	{
-		"NAME" : "Sample Brown Bread",
-		"SKU" : "SAM001",
-		"WEIGHT" : 0.00
+		"name" : "Sample Brown Bread",
+		"sku" : "SAM001",
+		"weight" : 0.00
 	},
 	{
-		"NAME" : "Sample White Bread",
-		"SKU" : "SAM002",
-		"WEIGHT" : 0.00
+		"name" : "Sample White Bread",
+		"sku" : "SAM002",
+		"weight" : 0.00
 	},
 	{
-		"NAME" : "Sample Multigrain Bread",
-		"SKU" : "SAM003",
-		"WEIGHT" : 0.00
+		"name" : "Sample Multigrain Bread",
+		"sku" : "SAM003",
+		"weight" : 0.00
 	},
 	{
-		"NAME" : "Brown Bread + Protein White Eggs",
-		"SKU" : "0002501",
-		"WEIGHT" : 1000.00
+		"name" : "Brown Bread + Protein White Eggs",
+		"sku" : "0002501",
+		"weight" : 1000.00
 	},
 	{
-		"NAME" : "Country special Bread",
-		"SKU" : "BFFl",
-		"WEIGHT" : 300.00
+		"name" : "Country special Bread",
+		"sku" : "BFFl",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "Country special Bread",
-		"SKU" : "BFFlL",
-		"WEIGHT" : 300.00
+		"name" : "Country special Bread",
+		"sku" : "BFFlL",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "testbread007",
-		"SKU" : "0000001",
-		"WEIGHT" : 100.00
+		"name" : "testbread007",
+		"sku" : "0000001",
+		"weight" : 100.00
 	},
 	{
-		"NAME" : "Country special Bread23",
-		"SKU" : "HII",
-		"WEIGHT" : 300.00
+		"name" : "Country special Bread23",
+		"sku" : "HII",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "Country special Bread",
-		"SKU" : "BFFKL",
-		"WEIGHT" : 22.00
+		"name" : "Country special Bread",
+		"sku" : "BFFKL",
+		"weight" : 22.00
 	},
 	{
-		"NAME" : "Country special Bread",
-		"SKU" : "KBL",
-		"WEIGHT" : 300.00
+		"name" : "Country special Bread",
+		"sku" : "KBL",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "Country special Bread",
-		"SKU" : "HILL",
-		"WEIGHT" : 300.00
+		"name" : "Country special Bread",
+		"sku" : "HILL",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "sp bread",
-		"SKU" : "bdd",
-		"WEIGHT" : 300.00
+		"name" : "sp bread",
+		"sku" : "bdd",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "sp bread",
-		"SKU" : "bddd",
-		"WEIGHT" : 300.00
+		"name" : "sp bread",
+		"sku" : "bddd",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "sp bread",
-		"SKU" : "dd",
-		"WEIGHT" : 300.00
+		"name" : "sp bread",
+		"sku" : "dd",
+		"weight" : 300.00
 	},
 	{
-		"NAME" : "sp bread",
-		"SKU" : "fkv",
-		"WEIGHT" : 300.00
-	},
-	
-	{
-		"NAME" : "bread",
-		"SKU" : "SKUBREAD",
-		"WEIGHT" : 100.00
-	},
-	{
-		"NAME" : "Test Bread",
-		"SKU" : "0213213",
-		"WEIGHT" : 222.00
+		"name" : "sp bread",
+		"sku" : "fkv",
+		"weight" : 300.00
 	},
 	
 	{
-		"NAME" : "Bread",
-		"SKU" : "BREAD1",
-		"WEIGHT" : 100.00
+		"name" : "bread",
+		"sku" : "skuBREAD",
+		"weight" : 100.00
 	},
 	{
-		"NAME" : "White Bread Combo New",
-		"SKU" : "1100818",
-		"WEIGHT" : 800.00
+		"name" : "Test Bread",
+		"sku" : "0213213",
+		"weight" : 222.00
+	},
+	
+	{
+		"name" : "Bread",
+		"sku" : "BREAD1",
+		"weight" : 100.00
+	},
+	{
+		"name" : "White Bread Combo New",
+		"sku" : "1100818",
+		"weight" : 800.00
 	}
 
 	
