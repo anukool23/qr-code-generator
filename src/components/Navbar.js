@@ -46,7 +46,17 @@ function NavBar() {
               _hover={{ textDecoration: "none", color: "teal.300" }}
               width="100%"
             >
-              Dairy QR Code
+              Dairy QR Code (New Format)
+            </Link>
+            </Box>
+          <Box flex="1" textAlign="center">
+            <Link
+              as={RouterLink}
+              to="/dairyqrOld"
+              _hover={{ textDecoration: "none", color: "teal.300" }}
+              width="100%"
+            >
+              Dairy QR Code (Old Format)
             </Link>
           </Box>
         </Flex>
