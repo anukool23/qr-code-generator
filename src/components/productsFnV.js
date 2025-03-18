@@ -1597,7 +1597,42 @@ const products = [
 		"name" : "White Bread Combo New",
 		"sku" : "1100818",
 		"weight" : 800.00
-	}
+	},
+	{
+		"name" : "White Eggs - 10pcs",
+		"sku" : "WE",
+		"weight" : 640.00
+	},
+	{
+		"name" : "Protein White Eggs - 10pcs",
+		"sku" : "PWE",
+		"weight" : 630.00
+	},
+	{
+		"name" : "Protein Brown Eggs - 10pcs",
+		"sku" : "PBE",
+		"weight" : 700.00
+	},
+	{
+		"name" : "Desi Tan Eggs- 10pcs",
+		"sku" : "DTE",
+		"weight" : 600.00
+	},
+	{
+		"name" : "Mix Veggies Combo - 1 pcs",
+		"sku" : "0000095",
+		"weight" : 0.00
+	},
+	{
+		"name" : "Brown Bread + Protein White Eggs",
+		"sku" : "0002501",
+		"weight" : 1000.00
+	},
+	{
+		"name" : "White Eggs Combo (Pack of 2)",
+		"sku" : "WEC",
+		"weight" : 1280.00
+	},
 
 	
 ];
