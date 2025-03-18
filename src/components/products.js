@@ -60,7 +60,7 @@ const products = [
 		"weight" : 200.00
 	},
 	{
-		"name" : "Arugula\/Rocket Leaf\t- 100 gm",
+		"name" : "Arugula Rocket Leaf - 100 gm",
 		"sku" : "0000078",
 		"weight" : 100.00
 	},
@@ -815,7 +815,7 @@ const products = [
 		"weight" : 1800.00
 	},
 	{
-		"name" : "Mosambi\/Sweet Lime - 450gm",
+		"name" : "Mosambi Sweet Lime - 450gm",
 		"sku" : "0000537",
 		"weight" : 450.00
 	},
@@ -1090,7 +1090,7 @@ const products = [
 		"weight" : 450.00
 	},
 	{
-		"name" : "Ridge Gourd\/Desi Tori - 450gm",
+		"name" : "Ridge Gourd Desi Tori - 450gm",
 		"sku" : "0000065",
 		"weight" : 450.00
 	},
