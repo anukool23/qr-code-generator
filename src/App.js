@@ -5,6 +5,7 @@ const Navbar = lazy(() => import("./components/Navbar"));
 const QRCodeGenerator = lazy(()=> import("./components/QRCodeGenerator"))
 const QRCodeGeneratorD = lazy(()=> import("./components/QRCodeGeneratorD"))
 const QRCodeGeneratorDold = lazy(()=> import("./components/QRCodeGeneratorDold"))
+const BarcodeGenerator = lazy(()=> import("./components/BarcodeGenerator"))
 function App() {
   return (
     <ChakraProvider>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/fnvqr" element={<QRCodeGenerator />} />
           <Route path="/dairyqr" element={<QRCodeGeneratorD />} />
           <Route path="/dairyqrOld" element={<QRCodeGeneratorDold />} />
+          <Route path="/barcodeGenerator" element={<BarcodeGenerator />} />
         </Routes>
     </Container>
     </Router>
