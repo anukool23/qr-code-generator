@@ -1,4 +1,354 @@
-const products = [
+const products =  [
+	
+	{
+		"name" : "Buffalo Milk - 500 ML",
+		"sku" : "BFF88",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Cow Milk - 500 ML",
+		"sku" : "CW",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Free Milk Test Kit",
+		"sku" : "FMKT",
+		"weight" : 20.00
+	},
+	{
+		"name" : "Low Fat Cow Milk - 500 ML",
+		"sku" : "LCW",
+		"weight" : 500.00
+	},
+	{
+		"name" : "A2 Cow Milk -  1 L",
+		"sku" : "A2CM",
+		"weight" : 950.00
+	},
+	{
+		"name" : "Buffalo Milk - 425 ML",
+		"sku" : "425BM",
+		"weight" : 425.00
+	},
+	{
+		"name" : "Cow Milk - 425 ML",
+		"sku" : "425CM",
+		"weight" : 425.00
+	},
+	{
+		"name" : "Low-Fat Cow Milk - 500 ML",
+		"sku" : "425LFCM",
+		"weight" : 425.00
+	},
+	{
+		"name" : "Cow Milk - 450 ML1",
+		"sku" : "450CM",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Buffalo Milk - 450 ML",
+		"sku" : "450BM",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Low-Fat Cow Milk - 500 ML",
+		"sku" : "450LFCM",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Buffalo Milk - 450 ml",
+		"sku" : "BM450",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Cow Milk - 450 ML2",
+		"sku" : "CM450",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Low Fat Cow Milk - 450 ML",
+		"sku" : "450LCW",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Taaza Paneer(Buffalo Milk)  - 180 GM",
+		"sku" : "PAN001",
+		"weight" : 180.00
+	},
+	{
+		"name" : "Kesar Badam Milk",
+		"sku" : "KSR001",
+		"weight" : 130.00
+	},
+	{
+		"name" : "Chocolate Milk",
+		"sku" : "CHMLK001",
+		"weight" : 130.00
+	},
+	{
+		"name" : "Lauki Ki Kheer (2 * Cow Milk 450 ml + Bottle Gourd 450 gm)",
+		"sku" : "0005006",
+		"weight" : 850.00
+	},
+	{
+		"name" : "Banana MilkShake (Banana 900 gm + 2 * Cow Milk 450 ml)",
+		"sku" : "0005007",
+		"weight" : 250.00
+	},
+	{
+		"name" : "Chhath Puja Combo 2 (Cow Milk 2x450 ml, Ghee 900 ml)",
+		"sku" : "CPC02",
+		"weight" : 1700.00
+	},
+	{
+		"name" : "Jeera Chaach + Pudina Chaach + Chocolate Milk + Kesar Badam Milk",
+		"sku" : "0002701",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Lactose-free Milk - 450ml",
+		"sku" : "LFM102019",
+		"weight" : 0.00
+	},
+	{
+		"name" : "Lactose-free Milk - 455ml",
+		"sku" : "LFM1020191",
+		"weight" : 0.00
+	},
+	{
+		"name" : "Free Milk",
+		"sku" : "1023500",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Cow Milk 500ml - Pack of 211",
+		"sku" : "0073687",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Cow Milk 500ml - Pack of 3",
+		"sku" : "00736881",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Cow Milk 500ml - Pack of 4",
+		"sku" : "007368811",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML(dummy)",
+		"sku" : "BFFDUMMY",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML",
+		"sku" : "BFF7",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy1",
+		"sku" : "BFF6",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy2",
+		"sku" : "BFF5",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy10",
+		"sku" : "BFF4",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy12",
+		"sku" : "BFF3",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy15",
+		"sku" : "BFF",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy18",
+		"sku" : "BFF1",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy20",
+		"sku" : "BFF",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy25",
+		"sku" : "BFFF",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy30",
+		"sku" : "BFF",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy31",
+		"sku" : "BFF",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy32",
+		"sku" : "BFF32",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy35",
+		"sku" : "BFF322",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummyA40",
+		"sku" : "BFFA40",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Buffalo Milk - 500 ML dummy50",
+		"sku" : "BFF50",
+		"weight" : 500.00
+	},
+	{
+		"name" : "Updated Buffalo Milk",
+		"sku" : "108387891972",
+		"weight" : 450.00
+	},
+	{
+		"name" : "Test New Cow Milk Product",
+		"sku" : "600LCWT",
+		"weight" : 600.00
+	},
+
+	{
+		"NAME" : "Brown Bread - 400 GM",
+		"SKU" : "BB",
+		"WEIGHT" : 400.00
+	},
+	{
+		"NAME" : "White Bread - 400 GM",
+		"SKU" : "WB",
+		"WEIGHT" : 400.00
+	},
+	{
+		"NAME" : "MultiGrain Bread - 400GM",
+		"SKU" : "MGB",
+		"WEIGHT" : 400.00
+	},
+	{
+		"NAME" : "Homestyle Whole Wheat Bread - 400GM",
+		"SKU" : "HWWB",
+		"WEIGHT" : 400.00
+	},
+	{
+		"NAME" : "Sample Brown Bread",
+		"SKU" : "SAM001",
+		"WEIGHT" : 0.00
+	},
+	{
+		"NAME" : "Sample White Bread",
+		"SKU" : "SAM002",
+		"WEIGHT" : 0.00
+	},
+	{
+		"NAME" : "Sample Multigrain Bread",
+		"SKU" : "SAM003",
+		"WEIGHT" : 0.00
+	},
+	{
+		"NAME" : "Brown Bread + Protein White Eggs",
+		"SKU" : "0002501",
+		"WEIGHT" : 1000.00
+	},
+	{
+		"NAME" : "Country special Bread",
+		"SKU" : "BFFl",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "Country special Bread",
+		"SKU" : "BFFlL",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "testbread007",
+		"SKU" : "0000001",
+		"WEIGHT" : 100.00
+	},
+	{
+		"NAME" : "Country special Bread23",
+		"SKU" : "HII",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "Country special Bread",
+		"SKU" : "BFFKL",
+		"WEIGHT" : 22.00
+	},
+	{
+		"NAME" : "Country special Bread",
+		"SKU" : "KBL",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "Country special Bread",
+		"SKU" : "HILL",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "sp bread",
+		"SKU" : "bdd",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "sp bread",
+		"SKU" : "bddd",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "sp bread",
+		"SKU" : "dd",
+		"WEIGHT" : 300.00
+	},
+	{
+		"NAME" : "sp bread",
+		"SKU" : "fkv",
+		"WEIGHT" : 300.00
+	},
+	
+	{
+		"NAME" : "bread",
+		"SKU" : "SKUBREAD",
+		"WEIGHT" : 100.00
+	},
+	{
+		"NAME" : "Test Bread",
+		"SKU" : "0213213",
+		"WEIGHT" : 222.00
+	},
+	
+	{
+		"NAME" : "Bread",
+		"SKU" : "BREAD1",
+		"WEIGHT" : 100.00
+	},
+	{
+		"NAME" : "White Bread Combo New",
+		"SKU" : "1100818",
+		"WEIGHT" : 800.00
+	},
+
+
+
+
+	//----------------------------------------------------
+
 	{
 		"name" : "Amla - 225 gm",
 		"sku" : "0000034",
@@ -1248,7 +1598,9 @@ const products = [
 		"name" : "Zucchini - 450 gm",
 		"sku" : "0000032",
 		"weight" : 450.00
-	}
+	},
+
+
 ];
 
 export default products;

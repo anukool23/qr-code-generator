@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid, Flex } from '@chakra-ui/react';
 import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
 import { format } from 'date-fns';
-import products from './products'; 
+import products from './productsFnV'; 
 
 const QRCodeGenerator = () => {
   const [selectedProduct, setSelectedProduct] = useState('');
