@@ -154,7 +154,7 @@ const QRCodeGeneratorD = () => {
           />
         </FormControl>
         <Button onClick={handleGenerate} colorScheme="teal">
-          Generate QR Codes
+          Generate Codes
         </Button>
       </VStack>
 
