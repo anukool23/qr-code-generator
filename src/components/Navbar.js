@@ -51,7 +51,7 @@ function NavBar() {
               borderRadius="md"
               _activeLink={activeLinkStyle}
             >
-              FnV QR Code
+              FnV QR
             </Link>
           </Box>
           <Box>
@@ -65,7 +65,7 @@ function NavBar() {
               borderRadius="md"
               _activeLink={activeLinkStyle}
             >
-              Dairy QR Code (New Format)
+              Dairy QR (New)
             </Link>
           </Box>
           <Box>
@@ -79,7 +79,7 @@ function NavBar() {
               borderRadius="md"
               _activeLink={activeLinkStyle}
             >
-              Dairy QR Code (Old Format)
+              Dairy QR (Old)
             </Link>
           </Box>
           <Box>
