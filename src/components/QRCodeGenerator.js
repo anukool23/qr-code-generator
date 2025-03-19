@@ -3,6 +3,7 @@ import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid,
 import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
 import { format } from 'date-fns';
 import products from './productsFnV'; 
+import { DownloadIcon } from "@chakra-ui/icons";
 
 const QRCodeGenerator = () => {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -60,6 +61,15 @@ const QRCodeGenerator = () => {
   const handleManualSkuInput = (e) => {
     setManualSku(e.target.value);
     setSelectedSku(e.target.value); 
+  };
+
+  const downloadImage = (index) => {
+    const canvas = document.getElementById(`qrcode-${index}`);
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = `qrcode-${index}.png`;
+    link.click();
   };
 
   return (
@@ -142,6 +152,14 @@ const QRCodeGenerator = () => {
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
             <canvas id={`qrcode-${index}`}></canvas>
             <Text mt={2}>{code}</Text>
+            <Button
+                          leftIcon={<DownloadIcon />}
+                          aria-label="Download QR code"
+                          mt={2}
+                          onClick={() => downloadImage(index)}
+                        >
+                          Download
+                        </Button>
           </Box>
         ))}
       </Flex>

@@ -1,51 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid, Flex } from '@chakra-ui/react';
-import { generateQRCode} from '../qrCodeGenerator';
-import { format, addDays } from 'date-fns';
-import products from './productsDairy'; 
+import React, { useState, useEffect } from "react";
+import {
+  Box,
+  Button,
+  Input,
+  VStack,
+  FormControl,
+  FormLabel,
+  Select,
+  Text,
+  Grid,
+  Flex,
+} from "@chakra-ui/react";
+import { DownloadIcon } from "@chakra-ui/icons";
+import { generateQRCode } from "../qrCodeGenerator";
+import { format, addDays } from "date-fns";
+import products from "./productsDairy";
 
 const QRCodeGeneratorDold = () => {
-  const [selectedProduct, setSelectedProduct] = useState('');
-  const [selectedSku, setSelectedSku] = useState('');
-  const [weight, setWeight] = useState('');
-  const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
-  const [expDate, setExpDate] = useState(format(addDays(new Date(), 2), 'yyyy-MM-dd'));
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedSku, setSelectedSku] = useState("");
+  const [weight, setWeight] = useState("");
+  const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
+  const [expDate, setExpDate] = useState(
+    format(addDays(new Date(), 2), "yyyy-MM-dd")
+  );
   const [quantity, setQuantity] = useState(1);
   const [qrCodes, setQrCodes] = useState([]);
-  const [manualSku, setManualSku] = useState('');
+  const [manualSku, setManualSku] = useState("");
 
   useEffect(() => {
-    const product = products.find(p => p.name === selectedProduct);
+    const product = products.find((p) => p.name === selectedProduct);
     if (product) {
       setSelectedSku(product.sku);
-      setWeight(product.weight.toString()); 
+      setWeight(product.weight.toString());
     } else {
-      setSelectedSku('');
-      setWeight('');
+      setSelectedSku("");
+      setWeight("");
     }
   }, [selectedProduct]);
 
   const handleSkuChange = (sku) => {
-    const product = products.find(p => p.sku === sku);
+    const product = products.find((p) => p.sku === sku);
     if (product) {
       setSelectedProduct(product.name);
       setWeight(product.weight.toString());
     } else {
-      setSelectedProduct('');
-      setWeight('');
+      setSelectedProduct("");
+      setWeight("");
     }
     setSelectedSku(sku);
   };
 
   const handleGenerate = () => {
-    if (!selectedProduct || !selectedSku || !weight || !date || !expDate || !quantity) {
-      alert('Please fill in all fields.');
+    if (
+      !selectedProduct ||
+      !selectedSku ||
+      !weight ||
+      !date ||
+      !expDate ||
+      !quantity
+    ) {
+      alert("Please fill in all fields.");
       return;
     }
 
     // Corrected the concatenation and conversion logic
-    const formattedMfgDate = format(new Date(date), 'ddMMyy');
-    const formattedExpDate = format(new Date(expDate), 'ddMMyy');
+    const formattedMfgDate = format(new Date(date), "ddMMyy");
+    const formattedExpDate = format(new Date(expDate), "ddMMyy");
 
     const qrCodesArray = [];
     for (let i = 0; i < quantity; i++) {
@@ -63,7 +84,16 @@ const QRCodeGeneratorDold = () => {
 
   const handleManualSkuInput = (e) => {
     setManualSku(e.target.value);
-    setSelectedSku(e.target.value); 
+    setSelectedSku(e.target.value);
+  };
+
+  const downloadImage = (index) => {
+    const canvas = document.getElementById(`qrcode-${index}`);
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = `qrcode-${index}.png`;
+    link.click();
   };
 
   return (
@@ -98,7 +128,7 @@ const QRCodeGeneratorDold = () => {
             ))}
             <option value={manualSku}>Enter Manually</option>
           </Select>
-          {selectedSku === 'Enter Manually' && (
+          {selectedSku === "Enter Manually" && (
             <Input
               placeholder="Enter SKU"
               value={manualSku}
@@ -106,7 +136,7 @@ const QRCodeGeneratorDold = () => {
             />
           )}
         </FormControl>
-        {selectedSku && selectedSku !== 'Enter Manually' && (
+        {selectedSku && selectedSku !== "Enter Manually" && (
           <Text mt={2}>SKU: {selectedSku}</Text>
         )}
         <FormControl id="weight" isRequired>
@@ -149,11 +179,33 @@ const QRCodeGeneratorDold = () => {
       </VStack>
 
       {/* Right side: Display QR Codes */}
-      <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" p={4}>
+      <Flex
+        flexWrap="wrap"
+        justify="center"
+        overflowY="auto"
+        height="100vh"
+        p={4}
+      >
         {qrCodes.map((code, index) => (
-          <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
+          <Box
+            key={index}
+            p={4}
+            borderWidth="1px"
+            borderRadius="lg"
+            mb={4}
+            mr={4}
+            textAlign="center"
+          >
             <canvas id={`qrcode-${index}`}></canvas>
             <Text mt={2}>{code}</Text>
+            <Button
+              leftIcon={<DownloadIcon />}
+              aria-label="Download QR code"
+              mt={2}
+              onClick={() => downloadImage(index)}
+            >
+              Download
+            </Button>
           </Box>
         ))}
       </Flex>

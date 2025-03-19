@@ -4,6 +4,7 @@ import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
 import { format, addDays } from 'date-fns'; 
 import products from './productsDairy'; 
 import { convertor } from '../utils';
+import { DownloadIcon } from "@chakra-ui/icons";
 
 const QRCodeGeneratorD = () => {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -65,6 +66,15 @@ const QRCodeGeneratorD = () => {
   const handleManualSkuInput = (e) => {
     setManualSku(e.target.value);
     setSelectedSku(e.target.value); 
+  };
+
+  const downloadImage = (index) => {
+    const canvas = document.getElementById(`qrcode-${index}`);
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = `qrcode-${index}.png`;
+    link.click();
   };
 
   return (
@@ -153,6 +163,14 @@ const QRCodeGeneratorD = () => {
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
             <canvas id={`qrcode-${index}`}></canvas>
             <Text mt={2}>{code}</Text>
+            <Button
+                          leftIcon={<DownloadIcon />}
+                          aria-label="Download QR code"
+                          mt={2}
+                          onClick={() => downloadImage(index)}
+                        >
+                          Download
+                        </Button>
           </Box>
         ))}
       </Flex>
