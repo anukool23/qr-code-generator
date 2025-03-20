@@ -122,9 +122,9 @@ const QRCodeGenerator = () => {
           )}
         </FormControl>
 
-        {selectedSku && selectedSku !== 'Enter Manually' && (
+        {/* {selectedSku && selectedSku !== 'Enter Manually' && (
           <Text mt={2}>SKU: {selectedSku}</Text>
-        )}
+        )} */}
 
         <FormControl id="weight" isRequired>
           <FormLabel>Weight</FormLabel>
