@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Input, VStack, FormControl, FormLabel, Select, Text, Grid, Flex } from '@chakra-ui/react';
+import { Box, Button, Input, VStack, FormControl, FormLabel, Text, Grid, Flex } from '@chakra-ui/react';
+import Select from 'react-select'; // Import react-select for searchable dropdowns
 import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
 import { format } from 'date-fns';
 import products from './productsFnV'; 
@@ -72,38 +73,45 @@ const QRCodeGenerator = () => {
     link.click();
   };
 
+  // Prepare product options for react-select
+  const productOptions = products.map((product) => ({
+    value: product.name,
+    label: product.name,
+  }));
+
+  // Prepare SKU options for react-select
+  const skuOptions = products.map((product) => ({
+    value: product.sku,
+    label: product.sku,
+  }));
+
   return (
     <Grid templateColumns="1fr 2fr" gap={8} height="100vh" overflow="hidden">
       {/* Left side: Form */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
+        
+        {/* Product Select with Search */}
         <FormControl id="product" isRequired>
           <FormLabel>Product</FormLabel>
           <Select
             placeholder="Select Product"
-            value={selectedProduct}
-            onChange={(e) => setSelectedProduct(e.target.value)}
-          >
-            {products.map((product) => (
-              <option key={product.name}value={product.name}>
-                {product.name}
-              </option>
-            ))}
-          </Select>
+            options={productOptions}
+            value={productOptions.find(option => option.value === selectedProduct)}
+            onChange={(selectedOption) => setSelectedProduct(selectedOption.value)}
+            isSearchable // Makes the dropdown searchable
+          />
         </FormControl>
+
+        {/* SKU Select with Search */}
         <FormControl id="sku" isRequired>
           <FormLabel>SKU</FormLabel>
           <Select
-            placeholder="Select or Enter SKU"
-            value={selectedSku}
-            onChange={(e) => handleSkuChange(e.target.value)}
-          >
-            {products.map((product) => (
-              <option key={product.sku} value={product.sku}>
-                {product.sku}
-              </option>
-            ))}
-            <option value={manualSku}>Enter Manually</option>
-          </Select>
+            placeholder="Select SKU"
+            options={skuOptions}
+            value={skuOptions.find(option => option.value === selectedSku)}
+            onChange={(selectedOption) => handleSkuChange(selectedOption.value)}
+            isSearchable // Makes the dropdown searchable
+          />
           {selectedSku === 'Enter Manually' && (
             <Input
               placeholder="Enter SKU"
@@ -112,9 +120,11 @@ const QRCodeGenerator = () => {
             />
           )}
         </FormControl>
+
         {selectedSku && selectedSku !== 'Enter Manually' && (
           <Text mt={2}>SKU: {selectedSku}</Text>
         )}
+
         <FormControl id="weight" isRequired>
           <FormLabel>Weight</FormLabel>
           <Input
@@ -153,13 +163,13 @@ const QRCodeGenerator = () => {
             <canvas id={`qrcode-${index}`}></canvas>
             <Text mt={2}>{code}</Text>
             <Button
-                          leftIcon={<DownloadIcon />}
-                          aria-label="Download QR code"
-                          mt={2}
-                          onClick={() => downloadImage(index)}
-                        >
-                          Download
-                        </Button>
+              leftIcon={<DownloadIcon />}
+              aria-label="Download QR code"
+              mt={2}
+              onClick={() => downloadImage(index)}
+            >
+              Download
+            </Button>
           </Box>
         ))}
       </Flex>

@@ -23,6 +23,9 @@ function NavBar() {
       height="60px"
       justifyContent="space-between"
       alignItems="center"
+      fontFamily={"sans-serif"}
+      fontStyle={"italic"}
+      fontWeight={"bold"}
     >
       {/* QR Logo on the Left */}
       <Box ml={4} marginRight={4} textAlign="left">
