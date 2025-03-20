@@ -6,12 +6,12 @@ import {
   VStack,
   FormControl,
   FormLabel,
-  Select,
   Text,
   Grid,
   Flex,
 } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
+import Select from "react-select"; // Import react-select
 import { generateQRCode } from "../qrCodeGenerator";
 import { format, addDays } from "date-fns";
 import products from "./productsDairy";
@@ -27,6 +27,16 @@ const QRCodeGeneratorDold = () => {
   const [quantity, setQuantity] = useState(1);
   const [qrCodes, setQrCodes] = useState([]);
   const [manualSku, setManualSku] = useState("");
+
+  const productOptions = products.map((product) => ({
+    value: product.name,
+    label: product.name,
+  }));
+
+  const skuOptions = products.map((product) => ({
+    value: product.sku,
+    label: product.sku,
+  }));
 
   useEffect(() => {
     const product = products.find((p) => p.name === selectedProduct);
@@ -64,7 +74,6 @@ const QRCodeGeneratorDold = () => {
       return;
     }
 
-    // Corrected the concatenation and conversion logic
     const formattedMfgDate = format(new Date(date), "ddMMyy");
     const formattedExpDate = format(new Date(expDate), "ddMMyy");
 
@@ -104,30 +113,21 @@ const QRCodeGeneratorDold = () => {
           <FormLabel>Product</FormLabel>
           <Select
             placeholder="Select Product"
-            value={selectedProduct}
-            onChange={(e) => setSelectedProduct(e.target.value)}
-          >
-            {products.map((product) => (
-              <option key={product.name} value={product.name}>
-                {product.name}
-              </option>
-            ))}
-          </Select>
+            options={productOptions}
+            value={productOptions.find((option) => option.value === selectedProduct)}
+            onChange={(selectedOption) => setSelectedProduct(selectedOption.value)}
+            isSearchable={true} // Search enabled
+          />
         </FormControl>
         <FormControl id="sku" isRequired>
           <FormLabel>SKU</FormLabel>
           <Select
             placeholder="Select or Enter SKU"
-            value={selectedSku}
-            onChange={(e) => handleSkuChange(e.target.value)}
-          >
-            {products.map((product) => (
-              <option key={product.sku} value={product.sku}>
-                {product.sku}
-              </option>
-            ))}
-            <option value={manualSku}>Enter Manually</option>
-          </Select>
+            options={skuOptions}
+            value={skuOptions.find((option) => option.value === selectedSku)}
+            onChange={(selectedOption) => handleSkuChange(selectedOption.value)}
+            isSearchable={true} // Search enabled
+          />
           {selectedSku === "Enter Manually" && (
             <Input
               placeholder="Enter SKU"
