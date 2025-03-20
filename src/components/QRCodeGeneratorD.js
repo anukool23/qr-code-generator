@@ -91,7 +91,7 @@ const QRCodeGeneratorD = () => {
   }));
 
   return (
-    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width={"100vh"} overflow="hidden">
+    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width="100vh"> {/* Changed width="100vh" to width="100%" */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
         
         {/* Product Select with Search */}
@@ -124,10 +124,6 @@ const QRCodeGeneratorD = () => {
             />
           )}
         </FormControl>
-
-        {selectedSku && selectedSku !== 'Enter Manually' && (
-          <Text mt={2}>SKU: {selectedSku}</Text>
-        )}
 
         <FormControl id="weight" isRequired>
           <FormLabel>Weight</FormLabel>
@@ -168,7 +164,7 @@ const QRCodeGeneratorD = () => {
         </Button>
       </VStack>
 
-      <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" width={"100vh"} p={4}>
+      <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" width="100%" p={4}> {/* Adjusted Flex width */}
         {qrCodes.map((code, index) => (
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
             <canvas id={`qrcode-${index}`}></canvas>
