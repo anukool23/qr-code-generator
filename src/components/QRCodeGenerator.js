@@ -86,7 +86,7 @@ const QRCodeGenerator = () => {
   }));
 
   return (
-    <Grid templateColumns="1fr 1fr" gap={8} height="100vh" overflow="hidden">
+    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width={"100vh"} overflow="hidden">
       {/* Left side: Form */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
         
@@ -162,7 +162,7 @@ const QRCodeGenerator = () => {
         {qrCodes.map((code, index) => (
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
             <canvas id={`qrcode-${index}`}></canvas>
-            <Text mt={2}>{code}</Text>
+            <Text mt={2} ml={2}>{code}</Text>
             <Button
               leftIcon={<DownloadIcon />}
               aria-label="Download QR code"

@@ -106,7 +106,7 @@ const QRCodeGeneratorDold = () => {
   };
 
   return (
-    <Grid templateColumns="1fr 2fr" gap={8} height="100vh" overflow="hidden">
+    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width="100vh" overflow="hidden">
       {/* Left side: Form */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
         <FormControl id="product" isRequired>
