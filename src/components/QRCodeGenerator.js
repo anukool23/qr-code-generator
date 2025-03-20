@@ -86,7 +86,7 @@ const QRCodeGenerator = () => {
   }));
 
   return (
-    <Grid templateColumns="1fr 2fr" gap={8} height="100vh" overflow="hidden">
+    <Grid templateColumns="1fr 1fr" gap={8} height="100vh" overflow="hidden">
       {/* Left side: Form */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
         
@@ -94,6 +94,7 @@ const QRCodeGenerator = () => {
         <FormControl id="product" isRequired>
           <FormLabel>Product</FormLabel>
           <Select
+          
             placeholder="Select Product"
             options={productOptions}
             value={productOptions.find(option => option.value === selectedProduct)}
