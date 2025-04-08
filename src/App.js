@@ -12,7 +12,7 @@ function App() {
     <Router>
     <Container centerContent>
       <Navbar />
-      <Heading as="h1" size="xl" my={5}>
+      <Heading as="h1" size="xl" my={5} mt={16}>
         QR Code Generator
       </Heading>
       <Routes>
