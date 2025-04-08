@@ -1,6 +1,7 @@
 import {React, lazy} from 'react';
 import {BrowserRouter as Router, Route, Routes,} from "react-router-dom";
 import { Container, Heading , ChakraProvider} from '@chakra-ui/react';
+import ProductForm from './components/ProductForm';
 const Navbar = lazy(() => import("./components/Navbar"));
 const QRCodeGenerator = lazy(()=> import("./components/QRCodeGenerator"))
 const QRCodeGeneratorD = lazy(()=> import("./components/QRCodeGeneratorD"))
@@ -12,7 +13,7 @@ function App() {
     <Router>
     <Container centerContent>
       <Navbar />
-      <Heading as="h1" size="xl" my={5}>
+      <Heading as="h1" size="xl" my={5} mt={16}>
         QR Code Generator
       </Heading>
       <Routes>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dairyqr" element={<QRCodeGeneratorD />} />
           <Route path="/dairyqrOld" element={<QRCodeGeneratorDold />} />
           <Route path="/barcodeGenerator" element={<BarcodeGenerator />} />
+          <Route path="/newProduct" element={<ProductForm />} />
         </Routes>
     </Container>
     </Router>

@@ -1,54 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Box, Button, Input, VStack, FormControl, FormLabel,
-  Text, Grid, Flex
-} from '@chakra-ui/react';
-import Select from 'react-select';
+import { Box, Button, Input, VStack, FormControl, FormLabel, Text, Grid, Flex } from '@chakra-ui/react';
+import Select from 'react-select'; // Import react-select for searchable dropdowns
 import { generateQRCode, generateRandomString } from '../qrCodeGenerator';
-import { format, addDays } from 'date-fns';
+import { format, addDays } from 'date-fns'; 
+import products from './productsDairy'; 
 import { convertor } from '../utils';
-import { DownloadIcon } from '@chakra-ui/icons';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { DownloadIcon } from "@chakra-ui/icons";
 
 const QRCodeGeneratorD = () => {
-  const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState('');
   const [selectedSku, setSelectedSku] = useState('');
   const [weight, setWeight] = useState('');
-  const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd'));
-  const [expDate, setExpDate] = useState(format(addDays(new Date(), 2), 'yyyy-MM-dd'));
+  const [date, setDate] = useState(format(new Date(), 'yyyy-MM-dd')); 
+  const [expDate, setExpDate] = useState(format(addDays(new Date(), 2), 'yyyy-MM-dd')); 
   const [quantity, setQuantity] = useState(1);
   const [qrCodes, setQrCodes] = useState([]);
   const [manualSku, setManualSku] = useState('');
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'products'));
-        const productList = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProducts(productList);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  useEffect(() => {
     const product = products.find(p => p.name === selectedProduct);
     if (product) {
       setSelectedSku(product.sku);
-      setWeight(product.weight.toString());
+      setWeight(product.weight.toString()); 
     } else {
       setSelectedSku('');
       setWeight('');
     }
-  }, [selectedProduct, products]);
+  }, [selectedProduct]);
 
   const handleSkuChange = (sku) => {
     const product = products.find(p => p.sku === sku);
@@ -88,31 +66,35 @@ const QRCodeGeneratorD = () => {
 
   const handleManualSkuInput = (e) => {
     setManualSku(e.target.value);
-    setSelectedSku(e.target.value);
+    setSelectedSku(e.target.value); 
   };
 
   const downloadImage = (index) => {
     const canvas = document.getElementById(`qrcode-${index}`);
-    const image = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
     link.href = image;
     link.download = `qrcode-${index}.png`;
     link.click();
   };
 
-  const productOptions = products.map(product => ({
+  // Prepare product options for react-select
+  const productOptions = products.map((product) => ({
     value: product.name,
     label: product.name,
   }));
 
-  const skuOptions = products.map(product => ({
+  // Prepare SKU options for react-select
+  const skuOptions = products.map((product) => ({
     value: product.sku,
     label: product.sku,
   }));
 
   return (
-    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width="100vw">
+    <Grid templateColumns="1fr 3fr" gap={8} height="100vh" width="100vh"> {/* Changed width="100vh" to width="100%" */}
       <VStack spacing={4} align="flex-start" overflow="hidden">
+        
+        {/* Product Select with Search */}
         <FormControl id="product" isRequired>
           <FormLabel>Product</FormLabel>
           <Select
@@ -120,10 +102,11 @@ const QRCodeGeneratorD = () => {
             options={productOptions}
             value={productOptions.find(option => option.value === selectedProduct)}
             onChange={(selectedOption) => setSelectedProduct(selectedOption.value)}
-            isSearchable
+            isSearchable // Makes the dropdown searchable
           />
         </FormControl>
 
+        {/* SKU Select with Search */}
         <FormControl id="sku" isRequired>
           <FormLabel>SKU</FormLabel>
           <Select
@@ -131,7 +114,7 @@ const QRCodeGeneratorD = () => {
             options={skuOptions}
             value={skuOptions.find(option => option.value === selectedSku)}
             onChange={(selectedOption) => handleSkuChange(selectedOption.value)}
-            isSearchable
+            isSearchable // Makes the dropdown searchable
           />
           {selectedSku === 'Enter Manually' && (
             <Input
@@ -150,7 +133,6 @@ const QRCodeGeneratorD = () => {
             onChange={(e) => setWeight(e.target.value)}
           />
         </FormControl>
-
         <FormControl id="date" isRequired>
           <FormLabel>Mfg Date</FormLabel>
           <Input
@@ -159,7 +141,6 @@ const QRCodeGeneratorD = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </FormControl>
-
         <FormControl id="expDate" isRequired>
           <FormLabel>Expiry Date</FormLabel>
           <Input
@@ -168,7 +149,6 @@ const QRCodeGeneratorD = () => {
             onChange={(e) => setExpDate(e.target.value)}
           />
         </FormControl>
-
         <FormControl id="quantity" isRequired>
           <FormLabel>Quantity</FormLabel>
           <Input
@@ -179,13 +159,12 @@ const QRCodeGeneratorD = () => {
             min="1"
           />
         </FormControl>
-
         <Button onClick={handleGenerate} colorScheme="teal">
           Generate Codes
         </Button>
       </VStack>
 
-      <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" width="100%" p={4}>
+      <Flex flexWrap="wrap" justify="center" overflowY="auto" height="100vh" width="100%" p={4}> {/* Adjusted Flex width */}
         {qrCodes.map((code, index) => (
           <Box key={index} p={4} borderWidth="1px" borderRadius="lg" mb={4} mr={4} textAlign="center">
             <canvas id={`qrcode-${index}`}></canvas>

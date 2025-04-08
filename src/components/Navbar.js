@@ -99,6 +99,20 @@ function NavBar() {
               Barcode Generator
             </Link>
           </Box>
+          <Box>
+            <Link
+              as={RouterLink}
+              to="/newProduct"
+              _hover={{ textDecoration: "none" }}
+              p={2}
+              border="1px"
+              borderColor="teal.300"
+              borderRadius="md"
+              _activeLink={activeLinkStyle}
+            >
+              New Product
+            </Link>
+          </Box>
         </Flex>
       </Flex>
     </Flex>
