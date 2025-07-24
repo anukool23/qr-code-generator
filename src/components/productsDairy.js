@@ -621,12 +621,12 @@ const products =  [
 	{
 		"name" : "Cake Fruit -400 GM",
 		"sku" : "CF",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Cake Fruit -400 GM",
 		"sku" : "CFr",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Cape Gooseberry (Rasbhari) - 450 gm",
@@ -801,7 +801,7 @@ const products =  [
 	{
 		"name" : "Delicious Fruit Test -400 GM",
 		"sku" : "DFT",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Diced Coconut - 100 gm",
@@ -821,7 +821,7 @@ const products =  [
 	{
 		"name" : "Early fruit -400 GM",
 		"sku" : "EF",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Elephant Foot Yam(Zimikand) - 450 gm",
@@ -841,7 +841,7 @@ const products =  [
 	{
 		"name" : "Fig Fruit -500 GM",
 		"sku" : "FIGF",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Free Carrot",
@@ -946,7 +946,7 @@ const products =  [
 	{
 		"name" : "Grapes Nashik -500 GM",
 		"sku" : "GN",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Grapes Red Globe - 450 gm",
@@ -1041,7 +1041,7 @@ const products =  [
 	{
 		"name" : "Jam Organic -400 GM",
 		"sku" : "JO",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Jamun - 225gm",
@@ -1106,12 +1106,12 @@ const products =  [
 	{
 		"name" : "Liq Fruit J -450 GM",
 		"sku" : "LQJ",
-		"weight" : null
+		"weight" : 450
 	},
 	{
 		"name" : "Longan - 450 gm",
 		"sku" : "0000622",
-		"weight" : null
+		"weight" : 450
 	},
 	{
 		"name" : "Malabar Spinach (Basale) - 450 gm",
@@ -1191,7 +1191,7 @@ const products =  [
 	{
 		"name" : "Mix Grain Organic - 500 GM",
 		"sku" : "MO",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Mosambi - Value Pack - 1.8 kg",
@@ -1236,7 +1236,7 @@ const products =  [
 	{
 		"name" : "Natural Fruit Org - 400 GM",
 		"sku" : "NFO",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Okra (Bhindi) - 225 gm",
@@ -1256,7 +1256,7 @@ const products =  [
 	{
 		"name" : "Onion Nashik -400 GM",
 		"sku" : "ON",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Orange (Nagpur) - 450 gm",
@@ -1281,12 +1281,12 @@ const products =  [
 	{
 		"name" : "Organic Pumpkin Test -500 GM",
 		"sku" : "OPT",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Organic Salt Test -900 GM",
 		"sku" : "OST",
-		"weight" : null
+		"weight" : 900
 	},
 	{
 		"name" : "Organic Wheat - 500 GM",
@@ -1341,12 +1341,12 @@ const products =  [
 	{
 		"name" : "Perry Mix -400 GM",
 		"sku" : "PMX",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Perry Perry Fruit -500 GM",
 		"sku" : "PPF",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Persimmon (Amarphal) - 450 gm",
@@ -1426,17 +1426,17 @@ const products =  [
 	{
 		"name" : "Random Fruit Test -500 GM",
 		"sku" : "RFT",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Rapid Fruit -400",
 		"sku" : "RF",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Raspberry Organic -450 GM",
 		"sku" : "RO",
-		"weight" : null
+		"weight" : 450
 	},
 	{
 		"name" : "Raw Banana - 450 gm",
@@ -1486,7 +1486,7 @@ const products =  [
 	{
 		"name" : "Salt Organic -400 GM",
 		"sku" : "SOK",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Sambar Onion - 225 gm",
@@ -1541,7 +1541,7 @@ const products =  [
 	{
 		"name" : "Star  Fruit -500 GM",
 		"sku" : "SF",
-		"weight" : null
+		"weight" : 500
 	},
 	{
 		"name" : "Strawberry - 200 gm",
@@ -1571,7 +1571,7 @@ const products =  [
 	{
 		"name" : "Tangerine -400GM",
 		"sku" : "TNG",
-		"weight" : null
+		"weight" : 400
 	},
 	{
 		"name" : "Tapioca - 450gm",
