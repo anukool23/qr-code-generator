@@ -1633,6 +1633,11 @@ const products = [
 		"sku" : "WEC",
 		"weight" : 1280.00
 	},
+	{
+		"name" : "Aata - 4KG",
+		"sku" : "0232323",
+		"weight" : 1
+	},
 
 	
 ];
