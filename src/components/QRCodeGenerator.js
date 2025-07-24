@@ -19,7 +19,7 @@ const QRCodeGenerator = () => {
     const product = products.find(p => p.name === selectedProduct);
     if (product) {
       setSelectedSku(product.sku);
-      setWeight(product.weight.toString()); 
+     setWeight((product.weight ?? 1).toString());
     } else {
       setSelectedSku('');
       setWeight('');
