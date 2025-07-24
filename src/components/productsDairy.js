@@ -1616,7 +1616,7 @@ const products =  [
 	{
 		"name" : "Wheat Grain - 500 GM",
 		"sku" : "WH",
-		"weight" : null
+		"weight" : 1
 	},
 	{
 		"name" : "Yellow Candy Tomato - 200 gms",
@@ -1632,6 +1632,11 @@ const products =  [
 		"name" : "Zucchini - 450 gm",
 		"sku" : "0000032",
 		"weight" : 450.00
+	},
+	{
+		"name" : "Aata - 4KG",
+		"sku" : "0232323",
+		"weight" : 1
 	},
 
 
